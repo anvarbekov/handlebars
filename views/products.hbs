@@ -1,0 +1,26 @@
+{{#if myProducts.length}} 
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {{#each myProducts}}
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src={{image}} alt="">
+                <div class="card-body">
+                    <p class="card-text fw-bold">{{title}}</p>
+                    <p class="card-text">{{description}}</p>
+                   <div class="d-flex justify-content-between align-items-center">
+                     <div class="d-flex align-items-center gap-2">
+                        <div class="avatar">
+                            <p style="margin: 0; padding: 0;">{{getFullNameFirstCharacter user.firstname user.lastname}}</p>
+                        </div>
+                        <p class="p-0 m-0">{{user.firstname}}</p>
+                     </div>
+                        <small class="text-muted text-end">{{price}} ming</small>
+                   </div>
+                </div>
+            </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <p>No products</p>
+{{/if}}

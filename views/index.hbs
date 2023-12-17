@@ -1,0 +1,34 @@
+{{#if products.length}} 
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {{#each products}}
+            <div class="col">
+            <div class="card shadow-sm">
+                <img src={{image}} alt="">
+                <div class="card-body">
+                    <p class="card-text fw-bold">{{title}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p>{{ formatDate createdAt }}</p>
+                        <p class="text-muted text-end">{{price}} ming</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                        <a href="/product/{{_id}}" type="button" class="btn btn-outline-primary">Detail</a>
+                        {{#if @root.token}}
+                            {{#ifequal user @root.userId}}
+                            <a href="/edit-product/{{_id}}" type="button" class="btn btn-outline-secondary">Edit</a>
+                            <form action="/delete-product/{{_id}}" method="post">
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+                            {{/ifequal}}
+                        {{/if}}
+                       
+                    </div>
+                </div>
+            </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <p>No products</p>
+{{/if}}

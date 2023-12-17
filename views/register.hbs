@@ -1,0 +1,57 @@
+<div class="w-75 mx-auto">
+  <p class="fs-1">Register</p>
+  <form action="/register" method="post">
+    {{#if registerError}}
+       <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong>
+        {{registerError}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{else}}
+    {{/if}}
+    <div class="d-flex gap-3">
+      <div class="form-floating mb-3 w-50">
+        <input
+          name="firstname"
+          type="text"
+          class="form-control"
+          id="firstname"
+          placeholder="Omar"
+        />
+        <label for="firstname">Your firstname</label>
+      </div>
+      <div class="form-floating mb-3 w-50">
+        <input
+          name="lastname"
+          type="text"
+          class="form-control"
+          id="lastname"
+          placeholder="Hisham"
+        />
+        <label for="lastname">Your lastname</label>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        name="email"
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="name@example.com"
+      />
+      <label for="email">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input
+        name="password"
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+      />
+      <label for="password">Password</label>
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Register</button>
+  </form>
+</div>
