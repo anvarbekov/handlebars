@@ -1,6 +1,10 @@
-<div class="w-75 mx-auto">
-  <p class="fs-1">Register</p>
-  <form action="/register" method="post">
+<div class="w-75 register mx-auto">
+   <div class="bg"></div>
+  <form action="/register" class="login__form" method="post">
+    <div class="login__title">
+      <img class="user__avatar" src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="">
+      <p class="login__text">Register</p>
+    </div>
     {{#if registerError}}
        <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong>
@@ -14,21 +18,21 @@
         <input
           name="firstname"
           type="text"
-          class="form-control"
+          {{!-- class="form-control" --}}
           id="firstname"
           placeholder="Omar"
         />
-        <label for="firstname">Your firstname</label>
+        {{!-- <label for="firstname">Your firstname</label> --}}
       </div>
       <div class="form-floating mb-3 w-50">
         <input
           name="lastname"
           type="text"
-          class="form-control"
+          {{!-- class="form-control" --}}
           id="lastname"
           placeholder="Hisham"
         />
-        <label for="lastname">Your lastname</label>
+        {{!-- <label for="lastname">Your lastname</label> --}}
       </div>
     </div>
 
@@ -36,22 +40,22 @@
       <input
         name="email"
         type="email"
-        class="form-control"
+        {{!-- class="form-control" --}}
         id="email"
         placeholder="name@example.com"
       />
-      <label for="email">Email address</label>
+      {{!-- <label for="email">Email address</label> --}}
     </div>
     <div class="form-floating">
       <input
         name="password"
         type="password"
-        class="form-control"
+        {{!-- class="form-control" --}}
         id="password"
         placeholder="Password"
       />
-      <label for="password">Password</label>
+      {{!-- <label for="password">Password</label> --}}
     </div>
-    <button type="submit" class="btn btn-success mt-3">Register</button>
+    <button type="submit" class="button mt-3">Register</button>
   </form>
 </div>

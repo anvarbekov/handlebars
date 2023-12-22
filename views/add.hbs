@@ -1,6 +1,9 @@
 <div class="w-75 mx-auto">
-    <p class="fs-1">Add Product</p>
-    <form action="/add-products" method="post">
+     <div class="login__title">
+        <img class="user__avatar" src="https://cdn0.iconfinder.com/data/icons/twitter-ui-flat/48/Twitter_UI-15-512.png" alt="">
+        <p class="login__text">Add Products</p>
+    </div>
+    <form action="/add-products" class="login__form" method="post">
         {{#if errorAddProducts}}
        <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong>
@@ -10,27 +13,20 @@
     {{else}}
    {{/if}}
         <div class="form-floating mb-3">
-            <input name="title" type="text" class="form-control" id="floatingInput" placeholder="title">
-            <label for="floatingInput">Title</label>
+            <input name="title" type="text" id="floatingInput" placeholder="title">
         </div>
 
         <div class="form-floating mb-3">
-            <textarea style="height: 100px;" name="description" class="form-control" placeholder="description" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Description</label>
+            <textarea style="height: 100px;" name="description" placeholder="description" id="floatingTextarea"></textarea>
         </div>
 
         <div class="form-floating mb-3">
-            <input name="image" type="text" class="form-control" id="floatingInput" placeholder="image">
-            <label for="floatingInput">Image</label>
+            <input name="image" type="text" id="floatingInput" placeholder="image">
         </div>
 
-       <div class="input-group mb-3">
-            <span class="input-group-text bg-light">$</span>
-            <div class="form-floating">
-                <input name="price" type="number" class="form-control" id="floatingInput" placeholder="price">
-                <label for="floatingInput">Price</label>
-            </div>
-       </div>
-        <button type="submit" class="btn btn-primary mt-3">Add Product</button>
+        <div class="form-floating mb-3">
+            <input name="price" type="number" id="floatingInput" placeholder="price">
+        </div>
+        <button type="submit" class="button add__btn mt-3">Add Product</button>
     </form>
 </div>

@@ -1,7 +1,7 @@
 <div class="container py-3">
   <header>
     <div
-      class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+      class="d-flex justify-content-between flex-md-row align-items-center pb-3 mb-4 border-bottom"
     >
       <a
         href="/"
@@ -9,43 +9,43 @@
       >
       <img src="favicon.svg" width="40" height="40" style="object-fit: cover;" alt="">
 
-        <span class="fs-4">Course</span>
+        <span class="fs-4 logo__title">Course</span>
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         {{#if isProducts}}
-        <a class="me-3 py-2 text-dark" href="/products">Products</a>
+        <a class="me-3 py-2 nav__link" href="/products">Products</a>
         {{else}}
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/products">Products</a>
+        <a class="me-3 py-2 nav__link text-decoration-none" href="/products">Products</a>
         {{/if}}
 
         {{#if isAdd}}
-        <a class="me-3 py-2 text-dark" href="/add">Add</a>
+        <a class="me-3 py-2 nav__link" href="/add">Add</a>
         {{else}}
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/add">Add</a>
+        <a class="me-3 py-2 nav__link text-decoration-none" href="/add">Add</a>
         {{/if}}
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
           {{#if token}}
-            <button type="button" class="btn btn-danger active">
+            <button type="button" class="button logout__btn active">
                 <a class="text-white text-decoration-none" href="/logout">Logout</a>
             </button>
           {{else}}
            {{#if isLogin}}
-            <button type="button" class="btn btn-primary active">
+            <button type="button" class="login__btn button active">
                 <a class="text-white text-decoration-none" href="/login">Login</a>
             </button>
           {{else}}
-           <button type="button" class="btn btn-primary">
+           <button type="button" class="login__btn button">
                 <a class="text-white text-decoration-none" href="/login">Login</a>
             </button>
           {{/if}}
 
           {{#if isRegister}}
-            <button type="button" class="btn btn-success active">
+            <button type="button" class="button register__btn active">
                 <a class="text-white text-decoration-none" href="/register">Register</a>
             </button>
           {{else}}
-            <button type="button" class="btn btn-success">
+            <button type="button" class="button register__btn">
                 <a class="text-white text-decoration-none" href="/register">Register</a>
             </button>
           {{/if}}

@@ -1,4 +1,4 @@
-{{#if myProducts.length}} 
+{{!-- {{#if myProducts.length}} 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {{#each myProducts}}
             <div class="col">
@@ -23,4 +23,38 @@
     </div>
 {{else}}
     <p>No products</p>
+{{/if}} --}}
+
+
+
+{{#if myProducts.length}} 
+<div class="row row-cols-1 justify-content-center row-cols-sm-2 row-cols-md-3 gap-3">
+    {{#each myProducts}}
+    <div class="card__content ">
+        <div class="card__img-box">
+            <a href="cource.html"><img class="card__img" src={{image}}></a>
+            <div class="new">New</div>
+        </div>
+        <h3 class="card__title">{{title}}</h3>
+        <div class="card-footer">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <a href="/product/{{_id}}" type="button" class="button">Detail</a>
+                {{#if @root.token}}
+                    {{#ifequal user @root.userId}}
+                    <a href="/edit-product/{{_id}}" type="button" class="btn btn-outline-secondary">Edit</a>
+                    <form action="/delete-product/{{_id}}" method="post">
+                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                    </form>
+                    {{/ifequal}}
+                {{/if}}
+                
+            </div>
+        </div>
+    </div>
+ {{/each}}
+</div>
+{{else}}
+<div class="empty">
+    <p>No Products 😫</p>
+</div>
 {{/if}}
